@@ -1,7 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { Container, Header, Logo, Link } from "./Layout.styled";
+import { useAuth } from "hooks/useAuth";
+import { UserMenu } from "components/UserMenu/UserMenu";
 
 export const Layout = () => {
+  const { isLoggedIn } = useAuth();
   return (
     <Container>
       <Header>
@@ -10,6 +13,7 @@ export const Layout = () => {
             💻
           </span>{" "} */}
           Phonebook
+          {isLoggedIn ? <UserMenu /> : <></>}
         </Logo>
         <nav>
           <Link to="/" end>
