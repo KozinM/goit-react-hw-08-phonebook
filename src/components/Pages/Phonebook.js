@@ -3,16 +3,14 @@ import { ContactForm } from 'components/ContactForm/contactForm';
 import Filter from '../ContactFilter/contactFilter';
 import ContactList from '../ContactList/contactList';
 
-
 export const Phonebook = () => {
-
-    return (
+  return (
     <div className={styles.wrapper}>
-    <h1>Phonebook</h1>
-    <ContactForm />
-    <h2>Contacts</h2>
-    <Filter />
-    <ContactList />
-  </div>
-    )
-}
+      <h1>Phonebook/Contacts</h1>
+      <Filter />
+      <ContactList />
+      <h2>Add Contact to the Phonebook</h2>
+      <ContactForm />
+    </div>
+  );
+};
