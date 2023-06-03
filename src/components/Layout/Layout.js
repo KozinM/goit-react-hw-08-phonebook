@@ -1,29 +1,15 @@
-import { Outlet } from "react-router-dom";
-import { Container, Header, Logo, Link } from "./Layout.styled";
-import { useAuth } from "hooks/useAuth";
-import { UserMenu } from "components/UserMenu/UserMenu";
+import { Outlet } from 'react-router-dom';
+import { AppBar } from 'components/AppBar/AppBar';
+import { Suspense } from 'react';
 
 export const Layout = () => {
-  const { isLoggedIn } = useAuth();
+
   return (
-    <Container>
-      <Header>
-        <Logo>
-{/*           <span role="img" aria-label="computer icon">
-            💻
-          </span>{" "} */}
-          Phonebook
-          {isLoggedIn ? <UserMenu /> : <></>}
-        </Logo>
-        <nav>
-          <Link to="/" end>
-            Home
-          </Link>
-          <Link to="/login">Log in</Link>
-          <Link to="/signin">Sign in</Link>
-        </nav>
-      </Header>
-      <Outlet />
-    </Container>
+    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+      <AppBar />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
+    </div>
   );
 };

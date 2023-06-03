@@ -8,12 +8,8 @@ import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './Routing/RestrictedRoute';
 import { PrivateRoute } from './Routing/PrivateRoute';
 import { Layout } from './Layout/Layout';
-//import { ContactForm } from './ContactForm/contactForm';
 import { SigninForm } from './SigninForm/SinginForm';
 import { LoginForm } from './LoginForm/LoginForm';
-//import ContactList from './ContactList/contactList';
-//import Filter from './ContactFilter/contactFilter';
-//import styles from './style.module.css';
 import { Phonebook } from './Pages/Phonebook';
 import Home from './Pages/Home';
 
@@ -37,7 +33,7 @@ export const App = () => {
       <Route index element={<Home/>}/>
 
       <Route
-          path="signin"
+          path="/register"
           element={
             <RestrictedRoute redirectTo="/phonebook" component={<SigninForm />} />
           }
