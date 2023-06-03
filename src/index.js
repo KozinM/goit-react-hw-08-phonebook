@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 
 //store & provider & redux-persist
@@ -15,9 +15,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter basename="/goit-react-hw-08-phonebook/">
+      <HashRouter >
         <App />
-      </BrowserRouter>
+      </HashRouter>
       </PersistGate>
     </Provider>
   </React.StrictMode>,
