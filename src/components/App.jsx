@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations';
@@ -8,11 +8,16 @@ import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './Routing/RestrictedRoute';
 import { PrivateRoute } from './Routing/PrivateRoute';
 import { Layout } from './Layout/Layout';
-import { SigninForm } from './SigninForm/SinginForm';
-import { LoginForm } from './LoginForm/LoginForm';
-import { Phonebook } from './Pages/Phonebook';
-import Home from './Pages/Home';
 
+// import { SigninForm } from './SigninForm/SinginForm';
+// import { LoginForm } from './LoginForm/LoginForm';
+// import { Phonebook } from './Pages/Phonebook';
+// import Home from './Pages/Home';
+
+const SigninForm = lazy(()=> import('./SigninForm/SinginForm'));
+const LoginForm = lazy(()=> import('./LoginForm/LoginForm'));
+const Phonebook = lazy(()=> import('../components/Pages/Phonebook'));
+const Home = lazy(()=> import('../components/Pages/Home'));
 
 
 

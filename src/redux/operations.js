@@ -5,7 +5,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchContacts = createAsyncThunk("contacts/fetchAll",
  async (_,thunkAPI) => {
     try{
-      console.log(axios.defaults.headers.common.Authorization);
+      
     const response = await axios.get("/contacts");
     return response.data;
     }

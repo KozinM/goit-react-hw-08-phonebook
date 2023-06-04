@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import css from './style.module.css';
 
-export const SigninForm = () => {
+const SigninForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -36,3 +36,4 @@ export const SigninForm = () => {
     </form>
   );
 };
+export default SigninForm;
